@@ -1,0 +1,17 @@
+services:
+  llm_api:
+    build: .
+    ports:
+      - "8002:8001"
+    environment:
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - OLLAMA_HOST=${OLLAMA_HOST}
+      - OLLAMA_AVAILABLE_MODELS=${OLLAMA_AVAILABLE_MODELS}
+      - OLLAMA_VISION_MODELS=${OLLAMA_VISION_MODELS}
+      - OLLAMA_MAX_TOKENS=${OLLAMA_MAX_TOKENS}
+      - OLLAMA_REQUEST_TIMEOUT=${OLLAMA_REQUEST_TIMEOUT}
+      - REFINEMENT_ITERATIONS=${REFINEMENT_ITERATIONS}
+      - DATA_FILE=/app/data/questions_fixture_unificado.json
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
