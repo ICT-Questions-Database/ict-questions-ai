@@ -104,7 +104,6 @@ celerybeat.pid
 
 # Environments
 .env
-.env.*
 .venv
 env/
 venv/
@@ -149,7 +148,7 @@ docker-compose.override.yml
 *.pid.lock
 
 # Project specific
-data/
+# data/
 !data/.gitkeep
 *.db
 *.sqlite3

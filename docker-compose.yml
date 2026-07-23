@@ -11,7 +11,7 @@ services:
       - OLLAMA_MAX_TOKENS=${OLLAMA_MAX_TOKENS}
       - OLLAMA_REQUEST_TIMEOUT=${OLLAMA_REQUEST_TIMEOUT}
       - REFINEMENT_ITERATIONS=${REFINEMENT_ITERATIONS}
-      - DATA_FILE=/app/data/questions_fixture_unificado.json
+      - DATA_FILE=${DATA_FILE}
     volumes:
       - ./data:/app/data
     restart: unless-stopped

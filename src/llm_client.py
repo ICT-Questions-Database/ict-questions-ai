@@ -1,5 +1,4 @@
 import httpx
-import json
 from typing import Optional
 from src.config import settings
 

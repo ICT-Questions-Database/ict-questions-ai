@@ -53,3 +53,4 @@ class GenerateQuestionsRequest(BaseModel):
     level: Level
     count: int = 5
     seed_questions: Optional[List[int]] = None
+    question_type: Optional[str] = "single_choice"

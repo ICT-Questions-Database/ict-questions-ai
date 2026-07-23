@@ -1,9 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from src.models import (
-    QuestionExplanationRequest,
     GenerateAnswersRequest,
     GenerateQuestionsRequest,
-    Track, Level
 )
 from src.question_repository import repository
 from src.explanation_service import explain_question, generate_answers_for_questions
@@ -45,6 +43,7 @@ def generate(req: GenerateQuestionsRequest):
         track=req.track,
         level=req.level,
         count=req.count,
-        seed_ids=seed_ids
+        seed_ids=seed_ids,
+        question_type=req.question_type
     )
     return {"generated": new_questions}
